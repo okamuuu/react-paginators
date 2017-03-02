@@ -9,6 +9,7 @@
     "@kadira/storybook": "^2.21.0",
     "@kadira/storybook-addon-knobs": "^1.7.1",
     "@kadira/storybook-deployer": "^1.2.0",
+    "assert": "^1.4.1",
     "babel": "^6.23.0",
     "babel-cli": "^6.23.0",
     "babel-preset-es2015": "^6.22.0",
