@@ -45,6 +45,6 @@
     "preversion": "CI=true npm run test && npm run check-changelog && npm run check-only-changelog-changed",
     "postversion": "git commit package.json CHANGELOG.md -m \"Version $npm_package_version\" && npm run tag && git push && git push --tags",
     "prepublish": "in-publish && safe-publish-latest && npm run build || not-in-publish",
-    "postpublish": "npm run build-storybook"
+    "postpublish": "npm run deploy-storybook"
   }
 }
