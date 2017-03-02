@@ -1,17 +1,34 @@
-import React from 'react';
-import { storiesOf, action, linkTo } from '@kadira/storybook';
-import Button from './Button';
-import Welcome from './Welcome';
+import React, { Component } from 'react'
+import { storiesOf } from '@kadira/storybook'
+import { withKnobs, number } from '@kadira/storybook-addon-knobs'
 
-storiesOf('Welcome', module)
-  .add('to Storybook', () => (
-    <Welcome showApp={linkTo('Button')}/>
-  ));
+import { Bootstrap3ishPaginator } from '../'
 
-storiesOf('Button', module)
-  .add('with text', () => (
-    <Button onClick={action('clicked')}>Hello Button</Button>
+class Bootstrap3ishPaginatorStory extends Component {
+
+  constructor(props) {
+    super(props)
+    this.state = { current: 3 }
+  }
+
+  handleClick(page) {
+    this.setState({current: page})
+  }
+
+  render() {
+    return (
+      <Bootstrap3ishPaginator
+        current={number('current', this.state.current)}
+        last={number('last', 20)}
+        maxPageCount={number('max page count', 10)}
+        onClick={this.handleClick.bind(this)}
+      />
+    )
+  }
+}
+
+storiesOf('React Paginator', module)
+  .addDecorator(withKnobs)
+  .add('Bootstrap3ishPaginator', () => (
+    <Bootstrap3ishPaginatorStory />
   ))
-  .add('with some emoji', () => (
-    <Button onClick={action('clicked')}>😀 😎 👍 💯</Button>
-  ));

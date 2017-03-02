@@ -1,9 +1,4 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import App from './App';
-import './index.css';
+import Paginator from './components/Paginator'
+import Bootstrap3ishPaginator from './components/Bootstrap3ishPaginator'
 
-ReactDOM.render(
-  <App />,
-  document.getElementById('root')
-);
+module.exports = { Paginator, Bootstrap3ishPaginator }
