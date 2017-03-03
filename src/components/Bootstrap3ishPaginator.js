@@ -6,6 +6,8 @@ import Paginator from './Paginator'
 
 const x = StyleSheet.create({
   container: {
+    margin: 0,
+    padding: 0,
     display: "flex",
     flexWrap: "no-wrap",
     borderRadius: "2px"
