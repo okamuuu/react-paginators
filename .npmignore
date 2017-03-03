@@ -1,6 +1,7 @@
 .babelrc
 .envrc
 .storybook
+.travis.yml
 stories
 src
 test
